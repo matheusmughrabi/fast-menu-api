@@ -1,0 +1,1 @@
+C:\Dev Matheus\PUC\sprint 1\fast-menu\fast-menu-api\src\FastMenu.Api\obj\Any CPU\Debug\FastMenu.Api.pyproj.CoreCompileInputs.cache

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{42B91946-AAB3-42DC-B793-929BA0AD16A2}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "FastMenu.Api", "src\FastMenu.Api\FastMenu.Api.pyproj", "{64190F3F-7F4A-4ECC-A83A-C76CB1B35C53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64190F3F-7F4A-4ECC-A83A-C76CB1B35C53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64190F3F-7F4A-4ECC-A83A-C76CB1B35C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64190F3F-7F4A-4ECC-A83A-C76CB1B35C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64190F3F-7F4A-4ECC-A83A-C76CB1B35C53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64190F3F-7F4A-4ECC-A83A-C76CB1B35C53} = {42B91946-AAB3-42DC-B793-929BA0AD16A2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6364A13-2992-4ADD-9692-C32C99C8A171}
+	EndGlobalSection
+EndGlobal
