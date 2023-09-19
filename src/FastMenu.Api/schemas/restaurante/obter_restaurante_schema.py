@@ -1,28 +1,25 @@
 from pydantic import BaseModel
 from typing import Optional, List
 from modelos.conta.conta_entidade import ContaEntidade
+from typing import List
 
 class ObterCardapioRestauranteSchema(BaseModel):
     id_restaurante: int = 123
- 
-class Item:
-    def __init__(self, nome: str):
-        self.nome = nome    
 
-class CardapioSecao:
-    def __init__(self, nome: str, item: Item):
-        self.nome = nome    
-        self.item = item
+class Item(BaseModel):
+    id_item: int
+    nome: str
+    valor: float
+
+class CardapioSecao(BaseModel):
+    id_cardapio_secao: int
+    nome: str
+    itens: List[Item]
 
 class ObterCardapioRestauranteViewSchema(BaseModel):
-    id_restaurante: int = 123
-    nome_restaurante: str = "Meu restaurante"    
-
-    def __init__(self, id: int, nome: str, cardapio_secoes: list[CardapioSecao]):
-        self.id = id
-        self.nome = nome
-        self.cardapio_secoes = cardapio_secoes
-
+    id_restaurante: int
+    nome_restaurante: str
+    cardapio_secoes: List[CardapioSecao]
 
 
 

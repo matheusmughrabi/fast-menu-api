@@ -1,57 +1,30 @@
-﻿from flask import Flask, redirect
+﻿from flask import Flask, redirect, jsonify
 from flask_cors import CORS
 from flask_openapi3 import OpenAPI, Info, Tag
+from sqlalchemy.orm import joinedload
+from fastapi import HTTPException, Depends, FastAPI
+from fastapi.responses import JSONResponse
 
 from modelos import *
 from schemas import *
 from bootstrapper.inicializador_db import seed_data
-
-app = Flask(__name__)
-
-# Make the WSGI interface available at the top level so wfastcgi can get it.
-wsgi_app = app.wsgi_app
+from controllers.restaurante_controller import register_restaurante_routes
+from controllers.cardapio_controller import registrar_cardapio_rotas
+from controllers.cardapio_secao_controller import registrar_cardapio_secao_rotas
 
 info = Info(title="Minha API", version="1.0.0")
 app = OpenAPI(__name__, info=info)
 CORS(app)
 
-home_tag = Tag(name="Documentação", description="Seleção de documentação: Swagger, Redoc ou RapiDoc")
-produto_tag = Tag(name="Produto", description="Adição, visualização e remoção de produtos à base")
 
-@app.get('/', tags=[home_tag])
-def home():
-    """Redireciona para /openapi, tela que permite a escolha do estilo de documentação.
-    """
-    return redirect('/openapi')
+register_restaurante_routes(app)
+registrar_cardapio_rotas(app)
+registrar_cardapio_secao_rotas(app)
 
-@app.get('/restaurante/home', tags=[produto_tag],
-         responses={"200": ObterCardapioRestauranteViewSchema, "404": ErrorSchema})
-def get_produto(query: ObterCardapioRestauranteSchema):
-    
-    return "teste", 404
+@app.route('/')
+def redirect_to_swagger():
+    return redirect('/openapi/swagger')
 
-@app.post('/conta/novo', tags=[produto_tag], responses={"200": CriarContaSchema, "409": ErrorSchema, "400": ErrorSchema})
-def criar_conta(form: CriarContaSchema):
-    """ Cria uma conta no aplicativo
-    """
-    conta = ContaEntidade(nome=form.nome_conta)
-    
-    session = Session()
-    session.add(conta)
-    session.flush() 
-
-    usuario = UsuarioEntidade(
-        nome=form.nome_responsavel,
-        cpf=form.cpf_responsavel,
-        email=form.email_responsavel,
-        senhaHash=form.senha_responsavel, 
-        id_conta=conta.id
-    )
-    
-    session.add(usuario)
-    session.commit()
-
-    return "conta criada", 200
 
 if __name__ == '__main__':
     import os

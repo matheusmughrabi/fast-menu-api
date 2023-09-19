@@ -14,6 +14,8 @@ class RestauranteEntidade(BaseEntidade):
     id_conta = Column(Integer, ForeignKey('Contas.id'), nullable=False)
     data_insercao = Column(DateTime, default=datetime.now())
 
+    cardapio = relationship("CardapioEntidade", backref="restaurante", uselist=False)
+    
     def __init__(self, nome:str, descricao:str, id_conta: int):        
         self.nome = nome
         self.descricao = descricao
