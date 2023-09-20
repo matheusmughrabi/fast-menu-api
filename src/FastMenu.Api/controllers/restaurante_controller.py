@@ -28,6 +28,7 @@ def register_restaurante_routes(app: OpenAPI):
         cardapio_view = ObterCardapioRestauranteViewSchema(
             id_restaurante=restaurante.id,
             nome_restaurante=restaurante.nome,
+            cardapio= Cardapio(id_cardapio = cardapio.id),
             cardapio_secoes=cardapio_secoes
         )
 

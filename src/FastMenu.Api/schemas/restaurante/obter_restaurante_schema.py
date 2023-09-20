@@ -15,10 +15,14 @@ class CardapioSecao(BaseModel):
     id_cardapio_secao: int
     nome: str
     itens: List[Item]
+    
+class Cardapio(BaseModel):
+    id_cardapio: int
 
 class ObterCardapioRestauranteViewSchema(BaseModel):
     id_restaurante: int
     nome_restaurante: str
+    cardapio: Cardapio
     cardapio_secoes: List[CardapioSecao]
 
 
