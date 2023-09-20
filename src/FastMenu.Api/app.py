@@ -12,7 +12,7 @@ from controllers.restaurante_controller import register_restaurante_routes
 from controllers.cardapio_controller import registrar_cardapio_rotas
 from controllers.cardapio_secao_controller import registrar_cardapio_secao_rotas
 
-info = Info(title="Minha API", version="1.0.0")
+info = Info(title="Fast Menu Api", version="1.0.0", description="Fast Menu Api contém as rotas para manutenção do cardápio de um restaurante")
 app = OpenAPI(__name__, info=info)
 CORS(app)
 

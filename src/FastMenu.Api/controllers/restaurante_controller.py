@@ -3,7 +3,7 @@
 from modelos import *
 from schemas import *
 
-restaurante_tag = Tag(name="Restaurante")
+restaurante_tag = Tag(name="Restaurante", description="O controller Restaurante contém uma rota para obter os principais dados do cardápio do restaurante")
 
 def register_restaurante_routes(app: OpenAPI):
     @app.get('/restaurante/home', tags=[restaurante_tag], responses={"200": ObterCardapioRestauranteViewSchema, "404": ErrorSchema})

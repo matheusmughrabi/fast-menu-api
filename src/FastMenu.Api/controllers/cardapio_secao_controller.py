@@ -4,7 +4,7 @@ from flask_openapi3 import OpenAPI, Tag
 from modelos import *
 from schemas import *
 
-cardapio_secao_tag = Tag(name="Cardapio Seção")
+cardapio_secao_tag = Tag(name="Cardapio Seção", description="O controller Cardápio Seção contém rotas para gerenciar os ítens de cada seção do cardápio")
 
 def registrar_cardapio_secao_rotas(app: OpenAPI):
     @app.post('/cardapio-item/novo', tags=[cardapio_secao_tag], responses={"201": None, "409": ErrorSchema, "400": ErrorSchema})
