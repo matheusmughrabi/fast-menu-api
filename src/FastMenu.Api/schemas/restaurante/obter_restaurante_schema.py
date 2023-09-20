@@ -18,12 +18,13 @@ class CardapioSecao(BaseModel):
     
 class Cardapio(BaseModel):
     id_cardapio: int
+    cardapio_secoes: List[CardapioSecao]
 
 class ObterCardapioRestauranteViewSchema(BaseModel):
     id_restaurante: int
     nome_restaurante: str
     cardapio: Cardapio
-    cardapio_secoes: List[CardapioSecao]
+
 
 
 

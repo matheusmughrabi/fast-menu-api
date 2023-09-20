@@ -37,7 +37,7 @@ def registrar_cardapio_rotas(app: OpenAPI):
             session.close()
 
 
-    @app.put('/menu-secao/atualizar-nome', tags=[cardapio_tag], responses={"200": None, "404": ErrorSchema, "400": ErrorSchema})
+    @app.patch('/menu-secao/atualizar-nome', tags=[cardapio_tag], responses={"200": None, "404": ErrorSchema, "400": ErrorSchema})
     def update_menu_secao_nome(form: AtualizarCardapioSecaoNomeSchema):
         session = Session()
 
