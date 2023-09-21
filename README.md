@@ -18,22 +18,23 @@ Cardápio Seção controller disponibiliza rotas para gerenciar os ítens da se�
 ## Limitações<a name = "limitacoes"></a>
 O projeto Fast Menu Api é apenas um MVP, por isso o conjunto de features implementadas é bastante limitado.
 Segue algumas limitações atuais do projeto:
-1 - Não é possível criar outras contas, temos apenas a conta de Id = 1 cadastrada na base e essa conta possui o restaurante de Id = 1 cadastrado na base. No futuro a aplicação será multi-tenant.
-2 - A Api não necessita de autentição atualmente, ao executar o projeto podemos fazer requests para qualquer endpoint
-3 - Não é possível criar novos restaurantes para a conta. No futuro penso que uma conta pode ter vários restaurantes para atender clientes grandes (i.e, Mcdonald's e outras grandes marcas)
+1. Não é possível criar outras contas, temos apenas a conta de Id = 1 cadastrada na base e essa conta possui o restaurante de Id = 1 cadastrado na base. No futuro a aplicação será multi-tenant.
+2. A Api não necessita de autentição atualmente, ao executar o projeto podemos fazer requests para qualquer endpoint
+3. Não é possível criar novos restaurantes para a conta. No futuro penso que uma conta pode ter vários restaurantes para atender clientes grandes (i.e, Mcdonald's e outras grandes marcas)
 
 ## Requisitos e Como executar<a name = "Como executar"></a>
 ### Requisitos
-1 - git instalado
-2 - python instalado
-3 - Algum gerenciador de pacotes python como virtualenv para facilitar a criação de um ambiente virtual ([virtualenv](https://virtualenv.pypa.io/en/latest/installation.html))
+1. git instalado
+2. python instalado
+3. Algum gerenciador de pacotes python como virtualenv para facilitar a criação de um ambiente virtual ([virtualenv](https://virtualenv.pypa.io/en/latest/installation.html))
 
 ### Como executar
-1 - Git clone https://github.com/matheusmughrabi/fast-menu-api.git
-2 - Abra o terminal no diretório relativo a raiz do projeto: .\src\FastMenu.Api
-3 - Crie o ambiente virtual
-4 - Execute o comando pip install -r requirements.txt
-5 - Execute o comando flask run --host 0.0.0.0 --port 5000
+1. Git clone https://github.com/matheusmughrabi/fast-menu-api.git
+2. Abra o terminal no diretório relativo a raiz do projeto: .\src\FastMenu.Api
+3. [Opicional] Crie o ambiente virtual
+4. [Opicional] Ative o ambiente virtual
+5. Execute o comando pip install -r requirements.txt
+6. Execute o comando flask run --host 0.0.0.0 --port 5000
 
 
 
