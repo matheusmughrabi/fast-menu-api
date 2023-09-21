@@ -36,5 +36,8 @@ Segue algumas limitações atuais do projeto:
 5. Execute o comando pip install -r requirements.txt
 6. Execute o comando flask run --host 0.0.0.0 --port 5000 IMPORTANTE EXECUTAR COM A PORTA 5000 POIS O PROJETO FAST MENU FRONT ESTÁ APONTANDO PARA ESTA PORTA
 
+### Observações
+1. Utilizei o banco de dados sqlite, então não é necessário ter nenhuma infraestrutura adicional instalada
+
 
 
