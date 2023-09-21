@@ -26,7 +26,7 @@ Segue algumas limitações atuais do projeto:
 ### Requisitos
 1. git instalado
 2. python instalado
-3. Algum gerenciador de pacotes python como virtualenv para facilitar a criação de um ambiente virtual ([virtualenv](https://virtualenv.pypa.io/en/latest/installation.html))
+3. [Opicional] Algum gerenciador de pacotes python como virtualenv para facilitar a criação de um ambiente virtual ([virtualenv](https://virtualenv.pypa.io/en/latest/installation.html))
 
 ### Como executar
 1. Git clone https://github.com/matheusmughrabi/fast-menu-api.git
