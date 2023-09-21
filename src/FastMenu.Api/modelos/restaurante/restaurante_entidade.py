@@ -1,10 +1,15 @@
-from sqlalchemy import Column, String, Integer, DateTime, UnicodeText, ForeignKey
+﻿from sqlalchemy import Column, String, Integer, DateTime, UnicodeText, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from typing import Union
 
 from  modelos.base.base_entidade import BaseEntidade
 
+'''
+Esta é a entidade raiz dos restaurantes da aplicação.
+Ela tem relação com cardápio, o que retrata bem o mundo real (cada restaurante possui um cardápio)
+Atualmente cada restaurante só possui 1 único cardápio
+'''
 class RestauranteEntidade(BaseEntidade):
     __tablename__ = 'Restaurantes'
 

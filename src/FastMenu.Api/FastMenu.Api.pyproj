@@ -69,10 +69,7 @@
   <ItemGroup>
     <Folder Include="modelos\" />
     <Folder Include="modelos\conta\" />
-    <Folder Include="modelos\avaliacao\" />
     <Folder Include="modelos\base\" />
-    <Folder Include="modelos\pagamento\" />
-    <Folder Include="modelos\pedido\" />
     <Folder Include="modelos\restaurante\" />
     <Folder Include="bootstrapper\" />
     <Folder Include="controllers\" />

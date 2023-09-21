@@ -1,10 +1,14 @@
-from sqlalchemy import Column, String, Integer, DateTime
+﻿from sqlalchemy import Column, String, Integer, DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from typing import Union
 
 from  modelos.base.base_entidade import BaseEntidade
 
+'''
+Esta é a entidade raiz de toda a aplicação.
+Ela possibilitará que a aplicação seja multi-tenant no futuro.
+'''
 class ContaEntidade(BaseEntidade):
     __tablename__ = 'Contas'
 

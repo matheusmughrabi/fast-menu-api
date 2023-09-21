@@ -1,10 +1,13 @@
-from sqlalchemy import Column, String, Integer, DateTime, ForeignKey
+﻿from sqlalchemy import Column, String, Integer, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from typing import Union
 
 from  modelos.base.base_entidade import BaseEntidade
 
+'''
+Esta entidade guarda os dados do usuários da aplicação.
+'''
 class UsuarioEntidade(BaseEntidade):
     __tablename__ = 'Usuarios'
 
