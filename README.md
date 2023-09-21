@@ -26,13 +26,13 @@ Segue algumas limitações atuais do projeto:
 ### Requisitos
 1. git instalado
 2. python instalado
-3. [Opicional] Algum gerenciador de pacotes python como virtualenv para facilitar a criação de um ambiente virtual ([virtualenv](https://virtualenv.pypa.io/en/latest/installation.html))
+3. [Opcional] Algum gerenciador de pacotes python como virtualenv para facilitar a criação de um ambiente virtual ([virtualenv](https://virtualenv.pypa.io/en/latest/installation.html))
 
 ### Como executar
 1. Git clone https://github.com/matheusmughrabi/fast-menu-api.git
 2. Abra o terminal no diretório relativo a raiz do projeto: .\src\FastMenu.Api
-3. [Opicional] Crie o ambiente virtual
-4. [Opicional] Ative o ambiente virtual
+3. [Opcional] Crie o ambiente virtual
+4. [Opcional] Ative o ambiente virtual
 5. Execute o comando pip install -r requirements.txt
 6. Execute o comando flask run --host 0.0.0.0 --port 5000
 
