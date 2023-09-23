@@ -6,8 +6,8 @@ from typing import Union
 from  modelos.base.base_entidade import BaseEntidade
 
 '''
-Cada ítem do cardápio é um prato servido pelo restaurante.
-Todos ítem pertence a uma seção do cardápio.
+Cada item do cardápio é um prato servido pelo restaurante.
+Todo item pertence a uma seção do cardápio.
 '''
 class CardapioItemEntidade(BaseEntidade):
     __tablename__ = 'CardapioItem'
