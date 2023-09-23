@@ -163,9 +163,5 @@ cython_debug/
 obj/Any CPU/Debug/
 .vs/FastMenu.Api/v17/.suo
 *.bin
-.vs/FastMenu.Api/v17/.suo
-*.bin
-.vs/FastMenu.Api/v17/.suo
 *.vsidx
-*.vsidx
-.vs/FastMenu.Api/v17/.suo
+.vs
