@@ -7,13 +7,13 @@ from fastapi.responses import JSONResponse
 
 from modelos import *
 from schemas import *
-from bootstrapper.inicializador_db import seed_data
+from bootstrapper.inicializador_db import inicializar
 from controllers.restaurante_controller import register_restaurante_routes
-from controllers.cardapio_controller import registrar_cardapio_rotas
+from controllers.cardapio_item_controller import registrar_cardapio_item_rotas
 from controllers.cardapio_secao_controller import registrar_cardapio_secao_rotas
 
 # Carga inicial da aplicação
-seed_data()
+inicializar()
 
 info = Info(title="Fast Menu Api", version="1.0.0", description="Fast Menu Api contém as rotas para manutenção do cardápio de um restaurante")
 app = OpenAPI(__name__, info=info)
@@ -21,8 +21,8 @@ CORS(app)
 
 
 register_restaurante_routes(app)
-registrar_cardapio_rotas(app)
 registrar_cardapio_secao_rotas(app)
+registrar_cardapio_item_rotas(app)
 
 @app.route('/')
 def redirect_to_swagger():

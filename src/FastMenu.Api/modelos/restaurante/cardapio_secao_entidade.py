@@ -5,6 +5,10 @@ from typing import Union
 
 from  modelos.base.base_entidade import BaseEntidade
 
+'''
+A seção de um cardápio tem como objetivo organizar o ítens servidos no restaurante de forma a melhorar a disposição do cardápio.
+Toda seção pertence a um cardápio e possui N ítens associados a ela.
+'''
 class CardapioSecaoEntidade(BaseEntidade):
     __tablename__ = 'CardapioSecao'
 

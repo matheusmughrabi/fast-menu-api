@@ -6,34 +6,35 @@ from flask_openapi3 import OpenAPI, Info, Tag
 from modelos import *
 from schemas import *
 
-def seed_data():
-    session = Session()
+'''
+Neste método criei uma pequena carga no banco de dados, pois ainda não temos o módulo de criação de contas implementado.
+Quando a aplicação tiver o módulo de criação de contas implementado, esse método deixará de existir
+'''
+def inicializar():
+    sessao = Session()
     
-    if session.query(ContaEntidade).count() > 0:
+    # Apenas uma verificação para que o banco seja inicializado uma única vez
+    if sessao.query(ContaEntidade).count() > 0:
         return
 
 
     conta = ContaEntidade("Minha franquia")
-    session.add(conta)
-    session.flush()
-    
-    usuario = UsuarioEntidade("João Silva", "000.000.000-00", "joao@exemplo.com", "12345", conta.id)
-    session.add(usuario)
-    session.flush()
+    sessao.add(conta)
+    sessao.flush()
     
     restaurante = RestauranteEntidade("Meu restaurante", "Meu restaurante desc", conta.id)
-    session.add(restaurante)
-    session.flush()
+    sessao.add(restaurante)
+    sessao.flush()
     
     cardapio = CardapioEntidade(restaurante.id)
-    session.add(cardapio)
-    session.flush()  
+    sessao.add(cardapio)
+    sessao.flush()  
     
     cardapio_secao_pratos_principais = CardapioSecaoEntidade("Pratos principais", cardapio.id)
     cardapio_secao_sobremesas = CardapioSecaoEntidade("Sobremesas", cardapio.id)
-    session.add(cardapio_secao_pratos_principais)
-    session.add(cardapio_secao_sobremesas)
-    session.flush()   
+    sessao.add(cardapio_secao_pratos_principais)
+    sessao.add(cardapio_secao_sobremesas)
+    sessao.flush()   
     
     cardapio_item_1 = CardapioItemEntidade("Macarrão molho branco", 50, cardapio_secao_pratos_principais.id)
     cardapio_item_2 = CardapioItemEntidade("Pizza", 90, cardapio_secao_pratos_principais.id)
@@ -42,14 +43,14 @@ def seed_data():
     cardapio_item_5 = CardapioItemEntidade("Brownie", 18, cardapio_secao_sobremesas.id)
     cardapio_item_6 = CardapioItemEntidade("Cholocate", 10, cardapio_secao_sobremesas.id)
     
-    session.add(cardapio_item_1)
-    session.add(cardapio_item_2)
-    session.add(cardapio_item_3)
-    session.add(cardapio_item_4)
-    session.add(cardapio_item_5)
-    session.add(cardapio_item_6)
+    sessao.add(cardapio_item_1)
+    sessao.add(cardapio_item_2)
+    sessao.add(cardapio_item_3)
+    sessao.add(cardapio_item_4)
+    sessao.add(cardapio_item_5)
+    sessao.add(cardapio_item_6)
     
-    session.commit()
+    sessao.commit()
 
     
     

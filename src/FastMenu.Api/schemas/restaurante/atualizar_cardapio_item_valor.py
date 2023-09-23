@@ -1,5 +1,8 @@
-from pydantic import BaseModel
+﻿from pydantic import BaseModel
 
 class AtualizarCardapioItemValorSchema(BaseModel):
-    id: int
-    valor: float
+    '''
+    Define como o valor de um item do cardápio deve ser atualizado
+    '''
+    id: int = 1
+    valor: float = 20.00

@@ -1,5 +1,8 @@
-from pydantic import BaseModel
+﻿from pydantic import BaseModel
 
 class AtualizarCardapioItemNomeSchema(BaseModel):
-    id: int
-    nome: str
+    '''
+    Define como o nome de um item do cardápio deve ser atualizado
+    '''
+    id: int = 1
+    nome: str = "Arroz"

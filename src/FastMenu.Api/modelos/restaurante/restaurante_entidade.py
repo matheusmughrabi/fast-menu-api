@@ -6,9 +6,9 @@ from typing import Union
 from  modelos.base.base_entidade import BaseEntidade
 
 '''
-Esta é a entidade raiz dos restaurantes da aplicação.
-Ela tem relação com cardápio, o que retrata bem o mundo real (cada restaurante possui um cardápio)
-Atualmente cada restaurante só possui 1 único cardápio
+A entidade restaurante possibilita que guardar os dados de um ou mais restaurantes que uma conta pode ter.
+Todo e qualquer restaurante deve pertencer a uma conta.
+Cada restaurante possui um cardápio no qual é possível que criar o ítens servidos no local.
 '''
 class RestauranteEntidade(BaseEntidade):
     __tablename__ = 'Restaurantes'

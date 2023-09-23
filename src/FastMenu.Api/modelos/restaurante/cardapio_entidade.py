@@ -5,6 +5,10 @@ from typing import Union
 
 from  modelos.base.base_entidade import BaseEntidade
 
+'''
+A entidade cardápio tem como objetivo agregar as seções do cardápio de um restaurante (e indiretamente os ítens da seção do cardápio).
+Todo cardápio pertence a um restaurante e possui N seções.
+'''
 class CardapioEntidade(BaseEntidade):
     __tablename__ = 'Cardapios'
 

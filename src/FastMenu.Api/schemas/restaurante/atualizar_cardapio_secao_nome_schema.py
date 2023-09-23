@@ -1,5 +1,8 @@
-from pydantic import BaseModel
+﻿from pydantic import BaseModel
 
 class AtualizarCardapioSecaoNomeSchema(BaseModel):
-    id_secao: int
-    nome: str
+    '''
+    Define como o nome de uma seção do cardápio deve estar atualizado
+    '''
+    id_secao: int = 1
+    nome: str = "Pratos principais"

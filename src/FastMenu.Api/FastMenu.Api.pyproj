@@ -17,6 +17,7 @@
     <Name>FastMenu.Api</Name>
     <RootNamespace>FastMenu.Api</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <WebBrowserPort>5000</WebBrowserPort>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,11 +30,10 @@
   <ItemGroup>
     <Compile Include="app.py" />
     <Compile Include="bootstrapper\inicializador_db.py" />
-    <Compile Include="controllers\cardapio_controller.py" />
+    <Compile Include="controllers\cardapio_item_controller.py" />
     <Compile Include="controllers\cardapio_secao_controller.py" />
     <Compile Include="controllers\restaurante_controller.py" />
     <Compile Include="modelos\conta\conta_entidade.py" />
-    <Compile Include="modelos\conta\usuario_entidade.py" />
     <Compile Include="modelos\restaurante\cardapio_item_entidade.py" />
     <Compile Include="modelos\restaurante\cardapio_secao_entidade.py" />
     <Compile Include="modelos\restaurante\restaurante_entidade.py" />
@@ -41,10 +41,9 @@
     <Compile Include="schemas\restaurante\adicionar_cardapio_item_schema.py" />
     <Compile Include="schemas\restaurante\adicionar_cardapio_secao_schema.py" />
     <Compile Include="schemas\restaurante\atualizar_cardapio_item_nome.py" />
-    <Compile Include="schemas\restaurante\deletar_cardaptio_item_schema.py" />
-    <Compile Include="schemas\restaurante\delete_cardapio_secao_schema.py" />
+    <Compile Include="schemas\restaurante\deletar_cardapio_item_schema.py" />
+    <Compile Include="schemas\restaurante\deletar_cardapio_secao_schema.py" />
     <Compile Include="schemas\restaurante\obter_restaurante_schema.py" />
-    <Compile Include="schemas\conta_schema.py" />
     <Compile Include="schemas\error.py" />
     <Compile Include="schemas\restaurante\atualizar_cardapio_item_valor.py" />
     <Compile Include="schemas\restaurante\atualizar_cardapio_secao_nome_schema.py" />
