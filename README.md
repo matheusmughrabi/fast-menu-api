@@ -114,7 +114,7 @@ Segue algumas limitações atuais do projeto:
 2. A API não necessita de autenticação atualmente, ao executar o projeto podemos fazer requests para qualquer endpoint
 3. Não é possível criar novos restaurantes para a conta. No futuro penso que uma conta pode ter vários restaurantes para atender clientes grandes.
 
-### Observações
+## Observações
 1. Utilizei o banco de dados sqlite, então não é necessário ter nenhuma infraestrutura adicional instalada
 
 
