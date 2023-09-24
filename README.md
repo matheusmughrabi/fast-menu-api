@@ -74,10 +74,10 @@ Segue abaixo a topologia da aplicação.
 
 ### Implementação
 - Fast-Menu Api foi implementada utilizando a linguagem python e o framework Flask.
-- O arquivo da aplicação chama-se *app.py*
+- O arquivo raiz da aplicação chama-se *app.py*
 - As entidades da aplicação encontram-se no diretório *modelos*
 - Os controllers encontram-se no diretório *controllers*
-- A pasta schemas contém as classes para transferência de dados (DTOs) que são utilizadas como contratos para cada endpoint da API
+- O diretório *schemas* contém as classes para transferência de dados (DTOs) que são utilizadas como contratos para cada endpoint da API
 - O diretório *bootstraper* contém o arquivo *inicializar_db* que por sua vez contém o método *inicializar*. Este método contém a carga inicial de dados.
 
 ## Requisitos e Como executar<a name = "Como executar"></a>
