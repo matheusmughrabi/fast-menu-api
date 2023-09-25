@@ -13,7 +13,7 @@ Este endpoint recebe o id do restaurante e retorna o cardápio completo.\
 **Método Http:** GET\
 **Autenticação:** Não precisa de autenticação por enquanto\
 **Autorização:** N/A\
-**Observação:** Informe id_restaurante = 1, pois é o único restaurante cadastrado na base de dados e a Api ainda não possibilita a criação de novos restaurantes
+**Observação:** Informe id_restaurante = 1, pois é o único restaurante cadastrado na base de dados e a API ainda não possibilita a criação de novos restaurantes
 
 
 ### Cardápio Seção Controller
@@ -68,12 +68,12 @@ Este endpoint recebe no payload id do item a ser deletado\
 **Autorização:** N/A
 
 ## Descrição técnica
-Fast-Menu Api é um monolito que se conecta a um banco de dados SQLite e que tem por objetivo fornecer os endpoints necessários para o front-end funcionar.
+Fast-Menu API é um monolito que se conecta a um banco de dados SQLite e que tem por objetivo fornecer os endpoints necessários para o front-end funcionar.
 Segue abaixo a topologia da aplicação.
 ![Topologia da aplicação](./imagens/topologia_aplicacao.png)
 
 ### Implementação
-- Fast-Menu Api foi implementada utilizando a linguagem python e o framework Flask.
+- Fast-Menu API foi implementada utilizando a linguagem python e o framework Flask.
 - O arquivo raiz da aplicação chama-se *app.py*
 - As entidades da aplicação encontram-se no diretório *modelos*
 - Os controllers encontram-se no diretório *controllers*
