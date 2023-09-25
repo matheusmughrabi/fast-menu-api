@@ -1,12 +1,22 @@
 # Fast Menu API
 
+## Índice
+
+- [Sobre](#sobre)
+- [Lista de endpoints](#endpoints)
+- [Descrição técnica](#descricao_tecnica)
+- [Requisitos e como executar](#requisitos)
+- [Próximas features](#proximas_features)
+- [Limitações](#limitacoes)
+- [Observações](#observacoes)
+
 ## Sobre<a name = "sobre"></a>
 Fast Menu API é uma API para gerenciar o cardápio de um restaurante.
 
-## Lista de Endpoints<a name = "endpoints"></a>
+## Lista de endpoints<a name = "endpoints"></a>
 Segue a lista de endpoints disponíveis em Fast Menu API
 
-### Restaurante Controller
+### Restaurante controller
 #### Obter dados do restaurante
 Este endpoint recebe o id do restaurante e retorna o cardápio completo.\
 **Rota:** restaurante/home?id_restaurante=1\
@@ -16,7 +26,7 @@ Este endpoint recebe o id do restaurante e retorna o cardápio completo.\
 **Observação:** Informe id_restaurante = 1, pois é o único restaurante cadastrado na base de dados e a API ainda não possibilita a criação de novos restaurantes
 
 
-### Cardápio Seção Controller
+### Cardápio seção controller
 #### Criar nova seção
 Este endpoint recebe no payload o nome da nova seção e o id do cardápio ao qual esta seção deverá pertencer\
 **Rota:** cardapio-secao/novo\
@@ -38,7 +48,7 @@ Este endpoint recebe no payload id da seção a ser deletada\
 **Autenticação:** Não precisa de autenticação por enquanto\
 **Autorização:** N/A
 
-### Cardápio Item Controller
+### Cardápio item controller
 #### Criar novo item
 Este endpoint recebe o id da seção que o item irá pertencer, o nome do item e o valor do item\
 **Rota:** cardapio-item/novo\
@@ -67,7 +77,7 @@ Este endpoint recebe no payload id do item a ser deletado\
 **Autenticação:** Não precisa de autenticação por enquanto\
 **Autorização:** N/A
 
-## Descrição técnica
+## Descrição técnica<a name = "descricao_tecnica"></a>
 Fast-Menu API é um monolito que se conecta a um banco de dados SQLite e que tem por objetivo fornecer os endpoints necessários para o front-end funcionar.
 Segue abaixo a topologia da aplicação.
 ![Topologia da aplicação](./imagens/topologia_aplicacao.png)
@@ -80,7 +90,7 @@ Segue abaixo a topologia da aplicação.
 - O diretório *schemas* contém as classes para transferência de dados (DTOs) que são utilizadas como contratos para cada endpoint da API
 - O diretório *bootstraper* contém o arquivo *inicializar_db* que por sua vez contém o método *inicializar*. Este método contém a carga inicial de dados.
 
-## Requisitos e Como executar<a name = "Como executar"></a>
+## Requisitos e como executar<a name = "requisitos"></a>
 ### Requisitos
 1. git instalado
 2. python instalado
@@ -94,7 +104,7 @@ Segue abaixo a topologia da aplicação.
 5. Execute o comando pip install -r requirements.txt
 6. Execute o comando flask run --host 0.0.0.0 --port 5000 IMPORTANTE EXECUTAR COM A PORTA 5000 POIS O PROJETO FAST MENU FRONT ESTÁ APONTANDO PARA ESTA PORTA
 
-## Próximas features
+## Próximas features<a name = "proximas_features"></a>
 Segue a lista de próximas features que serão implementadas em Fast Menu API
 1. Autenticação e Autorização em cada endpoint da aplicação
 2. Rota para criação de contas
@@ -114,7 +124,7 @@ Segue algumas limitações atuais do projeto:
 2. A API não necessita de autenticação atualmente, ao executar o projeto podemos fazer requests para qualquer endpoint
 3. Não é possível criar novos restaurantes para a conta. No futuro penso que uma conta pode ter vários restaurantes para atender clientes grandes.
 
-## Observações
+## Observações <a name = "observacoes"></a>
 1. Utilizei o banco de dados sqlite, então não é necessário ter nenhuma infraestrutura adicional instalada
 
 
