@@ -13,7 +13,7 @@ class CardapioSecaoEntidade(BaseEntidade):
     __tablename__ = 'CardapioSecao'
 
     id = Column(Integer, primary_key=True)
-    _nome = Column('nome', String(100), unique=True)
+    _nome = Column('nome', String(100), unique=False)
     _id_cardapio = Column('id_cardapio', Integer, ForeignKey('Cardapios.id'), nullable=False)
     data_insercao = Column(DateTime, default=datetime.now())
 
