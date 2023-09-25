@@ -76,21 +76,21 @@ def registrar_cardapio_item_rotas(app: OpenAPI):
         session = Session()
 
         try:
-            # Validação de falha rápida
+            cardapio_item = session.query(CardapioItemEntidade).filter_by(id=form.id).one_or_none()
+
+            if not cardapio_item:
+                return jsonify({"message": "cardapio_item não encontrado"}), 404
+
+                        # Validação de falha rápida
             # TODO: Extrair um método para reutilizar esta query, pois está sendo utilizada em dois lugares
             item_exists = session.query(
                         session.query(CardapioItemEntidade)
-                        .filter_by(_nome=form.nome, _id_cardapio_secao=form.id_cardapio_secao)
+                        .filter_by(_nome=form.nome, _id_cardapio_secao=cardapio_item.id_cardapio_secao)
                         .exists()
                     ).scalar()
 
             if item_exists:
                 return jsonify({"message": f"Já existe um item com o nome '{form.nome}' nesta seção."}), 409              
-
-            cardapio_item = session.query(CardapioItemEntidade).filter_by(id=form.id).one_or_none()
-
-            if not cardapio_item:
-                return jsonify({"message": "cardapio_item não encontrado"}), 404
 
             cardapio_item.nome = form.nome
             session.commit()

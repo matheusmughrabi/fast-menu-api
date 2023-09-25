@@ -12,7 +12,7 @@ def registrar_cardapio_secao_rotas(app: OpenAPI):
         session = Session() 
     
         try:
-            # Validação de falha rápida (fail-fast validation)
+            # Validação de falha rápida (fail-fast validation) para verificar se já existe uma seção com este nome no cardápio
             secao_exists = session.query(
                                         session.query(CardapioSecaoEntidade)
                                         .filter_by(_nome=form.nome, _id_cardapio=form.id_cardapio)
@@ -52,21 +52,21 @@ def registrar_cardapio_secao_rotas(app: OpenAPI):
         session = Session()
         
         try:
-            # Validação de falha rápida (fail-fast validation)
-            # TODO: Extrair método para reaproveitar esta lógica de fail-fast validation, pois está duplicado.
-            secao_exists = session.query(
-                                        session.query(CardapioSecaoEntidade)
-                                        .filter_by(_nome=form.nome, _id_cardapio=form.id_cardapio)
-                                        .exists()
-                                    ).scalar()            
-
-            if secao_exists:
-                return jsonify({"message": "Seção com este nome já existe"}), 409                  
-
             secao = session.query(CardapioSecaoEntidade).filter_by(id=form.id_secao).one_or_none()
 
             if not secao:
                 return jsonify({"message": "id_secao não encontrado"}), 404
+    
+            # Validação de falha rápida (fail-fast validation) para verificar se já existe uma seção com este nome no cardápio
+            # TODO: Extrair método para reaproveitar esta lógica de fail-fast validation, pois está duplicado.
+            secao_exists = session.query(
+                                        session.query(CardapioSecaoEntidade)
+                                        .filter_by(_nome=form.nome, _id_cardapio=secao.id_cardapio)
+                                        .exists()
+                                    ).scalar()            
+
+            if secao_exists:
+                return jsonify({"message": "Seção com este nome já existe"}), 409      
 
             secao.nome = form.nome    
             session.commit()
