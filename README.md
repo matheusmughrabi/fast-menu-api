@@ -108,14 +108,15 @@ Segue abaixo a topologia da aplicação.
 Segue a lista de próximas features que serão implementadas em Fast Menu API
 1. Autenticação e Autorização em cada endpoint da aplicação
 2. Rota para criação de contas
-3. Rota para criação de usuários
-4. Módulo de pedidos com as rotas a seguir
+3. Rota para obter um token de acesso
+4. Rota para criação de usuários
+5. Módulo de pedidos com as rotas a seguir
     1. Adicionar item ao carrinho
     2. Remover item do carrinho
     3. Enviar itens do carrinho para a cozinha
     4. Fechar conta
-5. Módulo de pagamentos no qual os pagamentos são registrados
-6. Módulo de sugestões do cliente no qual o cliente pode registrar suas sugestões para o restaurante
+6. Módulo de pagamentos no qual os pagamentos são registrados
+7. Módulo de sugestões do cliente no qual o cliente pode registrar suas sugestões para o restaurante
 
 ## Limitações<a name = "limitacoes"></a>
 O projeto Fast Menu API é apenas um MVP, por isso o conjunto de features implementadas é bastante limitado.
